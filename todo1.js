@@ -16,9 +16,15 @@ addBtn.addEventListener( 'click',function(){
         note.remove()
       })
 
-      note.querySelector(".edit").addEventListener('click',function(){
-note.textarea.contenteditable="false";
- })
+      note.querySelector(".edit").addEventListener('click', function () {
+       if(note.lastChild.disabled){
+         note.lastChild.disabled=false;
+         note.lastChild.focus();
+}
+else{
+   note.lastChild.disabled=true;
+}
+      })
       main.appendChild(note);
    }
    
